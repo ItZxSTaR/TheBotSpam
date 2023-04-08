@@ -9,7 +9,6 @@
         "SpamBots"
     ],
     "repository": "https://github.com/ItZxSTaR/XBOTS",
-    "stack": "heroku-20",
     "env": {
      "CMD_HNDLR": {
         "description": "Custom command handler.",
