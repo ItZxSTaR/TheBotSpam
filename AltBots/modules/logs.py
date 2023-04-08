@@ -4,7 +4,7 @@ import heroku3
 from datetime import datetime
 
 from telethon import events
-from config import X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, OWNER_ID, HEROKU_API_KEY, HEROKU_APP_NAME, CMD_HNDLR as hl
+from config import X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, SUDO_USERS, OWNER_ID, HEROKU_API_KEY, HEROKU_APP_NAME, CMD_HNDLR as hl
 
  
 @X1.on(events.NewMessage(incoming=True, pattern=r"\%slogs(?: |$)(.*)" % hl))
@@ -47,5 +47,6 @@ async def logs(legend):
         await asyncio.sleep(1)
         await fetch.delete()
         await X1.send_file(legend.chat_id, "AltLogs.txt", caption=f"⚡ 𝐗𝐁𝐨𝐭𝐬 𝐋𝐨𝐠𝐬 ⚡\n  » **ᴛɪᴍᴇ ᴛᴀᴋᴇɴ:** `{ms} ꜱᴇᴄᴏɴᴅꜱ`")
-    else:
+
+    elif legend.sender_id in SUDO_USERS:
         await legend.reply("» ꜱᴏʀʀʏ, ᴏɴʟʏ ᴏᴡɴᴇʀ ᴄᴀɴ ᴀᴄᴄᴇꜱꜱ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ.")

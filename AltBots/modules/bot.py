@@ -114,8 +114,9 @@ async def addsudo(event):
             target = reply_msg.sender_id
         except:
             await ok.edit("» ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴜꜱᴇʀ !!")
+            return
 
-        if target in sudousers:
+        if str(target) in sudousers:
             await ok.edit(f"ᴛʜɪꜱ ᴜꜱᴇʀ ɪꜱ ᴀʟʀᴇᴀᴅʏ ᴀ ꜱᴜᴅᴏ ᴜꜱᴇʀ !!")
         else:
             if len(sudousers) > 0:
@@ -123,4 +124,7 @@ async def addsudo(event):
             else:
                 newsudo = f"{target}"
             await ok.edit(f"» **ɴᴇᴡ ꜱᴜᴅᴏ ᴜꜱᴇʀ**: `{target}`\n» `ʀᴇsᴛᴀʀᴛɪɴɢ ʙᴏᴛ...`")
-            heroku_var["SUDO_USERS"] = newsudo   
+            heroku_var["SUDO_USERS"] = newsudo    
+    
+    elif event.sender_id in SUDO_USERS:
+        await event.reply("» ꜱᴏʀʀʏ, ᴏɴʟʏ ᴏᴡɴᴇʀ ᴄᴀɴ ᴀᴄᴄᴇꜱꜱ ᴛʜɪꜱ ᴄᴏᴍᴍᴀɴᴅ.")

@@ -77,7 +77,7 @@ async def spam(event: events):
 @X10.on(events.NewMessage(incoming=True, pattern=r"\%spspam(?: |$)(.*)" % hl))
 async def pspam(event):
     if event.sender_id in SUDO_USERS:
-        if int(event.chat_id) in GROUP:
+        if event.chat_id in GROUP:
             await event.reply("» ꜱᴏʀʀʏ, ᴛʜɪꜱ ɪꜱ ᴀʟᴛʀᴏɴ ᴘʀᴏᴛᴇᴄᴛᴇᴅ ɢʀᴏᴜᴘ.")
         else:
             try:
@@ -88,7 +88,7 @@ async def pspam(event):
                     await gifspam(event, alt) 
                     await asyncio.sleep(0.2)
             except (IndexError, ValueError):
-                await event.reply(f"🔞 **ᴜsᴀɢᴇ:**  {hl}pspam 13")
+                await event.reply(f"🔞 **Usage:**  {hl}pspam 13")
 
 
 @X1.on(events.NewMessage(incoming=True, pattern=r"\%shang(?: |$)(.*)" % hl))
@@ -103,7 +103,7 @@ async def pspam(event):
 @X10.on(events.NewMessage(incoming=True, pattern=r"\%shang(?: |$)(.*)" % hl))
 async def hang(e):
     if e.sender_id in SUDO_USERS:
-        if int(e.chat_id) in GROUP:
+        if e.chat_id in GROUP:
             await e.reply("» ꜱᴏʀʀʏ, ᴛʜɪꜱ ɪꜱ ᴀʟᴛʀᴏɴ ᴘʀᴏᴛᴇᴄᴛᴇᴅ ɢʀᴏᴜᴘ.")
         else:
             try:

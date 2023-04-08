@@ -26,11 +26,11 @@ async def echo(event):
             reply_msg = await event.get_reply_message()
             user_id = reply_msg.sender_id
 
-            if int(user_id) in ALTRON:
+            if user_id in ALTRON:
                 await event.reply("ɴᴏ, ᴛʜɪꜱ ɢᴜʏ ɪꜱ ᴀʟᴛʀᴏɴ'ꜱ ᴏᴡɴᴇʀ.")
-            elif int(user_id) == OWNER_ID:
+            elif user_id == OWNER_ID:
                 await event.reply("ɴᴏ, ᴛʜɪꜱ ɢᴜʏ ɪꜱ ᴏᴡɴᴇʀ ᴏꜰ ᴛʜᴇꜱᴇ ʙᴏᴛꜱ.")
-            elif int(user_id) in SUDO_USERS:
+            elif user_id in SUDO_USERS:
                 await event.reply("ɴᴏ, ᴛʜɪꜱ ɢᴜʏ ɪꜱ ᴀ ꜱᴜᴅᴏ ᴜꜱᴇʀ.")
             else:
                 try:
@@ -103,4 +103,4 @@ async def _(e):
             pass
         if e.message.text or e.message.sticker:
             await e.reply(e.message)
-            await asyncio.sleep(0.2)
+            await asyncio.sleep(0.1)
