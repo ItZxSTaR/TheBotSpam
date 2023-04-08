@@ -41,48 +41,88 @@ if BOT_TOKEN:
     X1 = TelegramClient('X1', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
 else:
     X1 = TelegramClient("startup", API_ID, API_HASH)
+    try:
+        X1.start()
+    except:
+        pass
 
 if BOT_TOKEN2:
     X2 = TelegramClient('X2', API_ID, API_HASH).start(bot_token=BOT_TOKEN2)
 else:
     X2 = TelegramClient("startup", API_ID, API_HASH)
+    try:
+        X2.start()
+    except:
+        pass
 
 if BOT_TOKEN3:
     X3 = TelegramClient('X3', API_ID, API_HASH).start(bot_token=BOT_TOKEN3)
 else:
     X3 = TelegramClient("startup", API_ID, API_HASH)
+    try:
+        X3.start()
+    except:
+        pass
 
 if BOT_TOKEN4:
     X4 = TelegramClient('X4', API_ID, API_HASH).start(bot_token=BOT_TOKEN4)
 else:
     X4 = TelegramClient("startup", API_ID, API_HASH)
+    try:
+        X4.start()
+    except:
+        pass
 
 if BOT_TOKEN5:
     X5 = TelegramClient('X5', API_ID, API_HASH).start(bot_token=BOT_TOKEN5)
 else:
     X5 = TelegramClient("startup", API_ID, API_HASH)
+    try:
+        X5.start()
+    except:
+        pass
 
 if BOT_TOKEN6:
     X6 = TelegramClient('X6', API_ID, API_HASH).start(bot_token=BOT_TOKEN6)
 else:
     X6 = TelegramClient("startup", API_ID, API_HASH)
+    try:
+        X6.start()
+    except:
+        pass
 
 if BOT_TOKEN7:
     X7 = TelegramClient('X7', API_ID, API_HASH).start(bot_token=BOT_TOKEN7)
 else:
     X7 = TelegramClient("startup", API_ID, API_HASH)
+    try:
+        X7.start()
+    except:
+        pass
 
 if BOT_TOKEN8:
     X8 = TelegramClient('X8', API_ID, API_HASH).start(bot_token=BOT_TOKEN8)
 else:
     X8 = TelegramClient("startup", API_ID, API_HASH)
+    try:
+        X8.start()
+    except:
+        pass
 
 if BOT_TOKEN9:
     X9 = TelegramClient('X9', API_ID, API_HASH).start(bot_token=BOT_TOKEN9)
 else:
     X9 = TelegramClient("startup", API_ID, API_HASH)
+    try:
+        X9.start()
+    except:
+        pass
 
 if BOT_TOKEN10:
     X10 = TelegramClient('X10', API_ID, API_HASH).start(bot_token=BOT_TOKEN10)
 else:
     X10 = TelegramClient("startup", API_ID, API_HASH)
+    try:
+        X10.start()
+    except:
+        pass
