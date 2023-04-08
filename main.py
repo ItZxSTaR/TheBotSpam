@@ -1,12 +1,26 @@
 import glob
-from pathlib import Path
-from utils import load_plugins
-import logging
+import sys
 import asyncio
+import logging
+import importlib
+
+from pathlib import Path
 from config import X1, X2, X3, X4, X5, X6, X7, X8, X9, X10
+
 
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
                     level=logging.WARNING)
+
+
+def load_plugins(plugin_name):
+    path = Path(f"AltBots/modules/{plugin_name}.py")
+    name = "AltBots.modules.{}".format(plugin_name)
+    spec = importlib.util.spec_from_file_location(name, path)
+    load = importlib.util.module_from_spec(spec)
+    load.logger = logging.getLogger(plugin_name)
+    spec.loader.exec_module(load)
+    sys.modules["AltBots.modules." + plugin_name] = load
+    print("Altron has Imported " + plugin_name)
 
 
 path = "AltBots/modules/*.py"

