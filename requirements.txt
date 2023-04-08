@@ -1,4 +1,3 @@
 telethon
 cryptg
 heroku3
-psycopg2
