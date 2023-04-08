@@ -1,1 +1,1 @@
-Altron: python -m main.py
+worker: python3 main.py
