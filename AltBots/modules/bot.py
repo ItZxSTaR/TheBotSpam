@@ -3,7 +3,6 @@ import sys
 import heroku3
 
 from telethon import events
-
 from datetime import datetime
 from config import X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, OWNER_ID, SUDO_USERS, HEROKU_APP_NAME, HEROKU_API_KEY, CMD_HNDLR as hl
 
@@ -98,10 +97,9 @@ async def restart(e):
 async def addsudo(event):
     if event.sender_id == OWNER_ID:
         Heroku = heroku3.from_key(HEROKU_API_KEY)
-        sudousers = os.environ.get("SUDO_USER", None)
+        sudousers = os.environ.get("SUDO_USERS", None)
 
         ok = await event.reply(f"» __ᴀᴅᴅɪɴɢ ᴜꜱᴇʀ ᴀꜱ ꜱᴜᴅᴏ...__")
-        mks = "SUDO_USER"
         target = ""
         if HEROKU_APP_NAME is not None:
             app = Heroku.app(HEROKU_APP_NAME)
@@ -114,11 +112,15 @@ async def addsudo(event):
         try:
             reply_msg = await event.get_reply_message()
             target = reply_msg.sender_id
-        except Exception:
+        except:
             await ok.edit("» ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴜꜱᴇʀ !!")
-        if len(sudousers) > 0:
-            newsudo = f"{sudousers} {target}"
+
+        if target in sudousers:
+            await ok.edit(f"ᴛʜɪꜱ ᴜꜱᴇʀ ɪꜱ ᴀʟʀᴇᴀᴅʏ ᴀ ꜱᴜᴅᴏ ᴜꜱᴇʀ !!")
         else:
-            newsudo = f"{target}"
-        await ok.edit(f"» **ɴᴇᴡ ꜱᴜᴅᴏ ᴜꜱᴇʀ**: `{target}`\n» `ʀᴇsᴛᴀʀᴛɪɴɢ ʙᴏᴛ...`")
-        heroku_var[mks] = newsudo   
+            if len(sudousers) > 0:
+                newsudo = f"{sudousers} {target}"
+            else:
+                newsudo = f"{target}"
+            await ok.edit(f"» **ɴᴇᴡ ꜱᴜᴅᴏ ᴜꜱᴇʀ**: `{target}`\n» `ʀᴇsᴛᴀʀᴛɪɴɢ ʙᴏᴛ...`")
+            heroku_var["SUDO_USERS"] = newsudo   
