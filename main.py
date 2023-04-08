@@ -32,26 +32,46 @@ print("\n𝐗𝐁𝐨𝐭𝐬 𝐃𝐞𝐩𝐥𝐨𝐲𝐞𝐝 𝐒𝐮𝐜𝐜�
 
 
 async def main():
-    if X1:
+    try:
         await X1.run_until_disconnected()
-    if X2:
+    except:
+        pass
+    try:
         await X2.run_until_disconnected()
-    if X3:
+    except:
+        pass
+    try:
         await X3.run_until_disconnected()
-    if X4:
+    except:
+        pass
+    try:
         await X4.run_until_disconnected()
-    if X5:
+    except:
+        pass
+    try:
         await X5.run_until_disconnected()
-    if X6:
+    except:
+        pass
+    try:
         await X6.run_until_disconnected()
-    if X7:
+    except:
+        pass
+    try:
         await X7.run_until_disconnected()
-    if X8:
+    except:
+        pass
+    try:
         await X8.run_until_disconnected()
-    if X9:
+    except:
+        pass
+    try:
         await X9.run_until_disconnected()
-    if X10:
+    except:
+        pass
+    try:
         await X10.run_until_disconnected()
+    except:
+        pass
 
 
 loop = asyncio.get_event_loop()
