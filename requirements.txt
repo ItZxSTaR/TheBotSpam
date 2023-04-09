@@ -1,3 +1,0 @@
-telethon
-cryptg
-heroku3
